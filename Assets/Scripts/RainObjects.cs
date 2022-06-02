@@ -5,6 +5,7 @@ using UnityEngine;
 public class RainObjects : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject cubo;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,9 @@ public class RainObjects : MonoBehaviour
 
         while (tiempo > contador && contador <= 10)
         {
-            Instantiate(prefab);
+            GameObject clon = Instantiate(prefab);
             contador += 1;
+            clon.transform.position += new Vector3(0, 0, 2);
         }
         
         
