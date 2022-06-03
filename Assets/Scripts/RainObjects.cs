@@ -6,26 +6,29 @@ public class RainObjects : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject cubo;
+    int contador = 0;
+    GameObject clon;
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        int tiempo = Mathf.FloorToInt(Time.time);
-        int contador = 0;
+        //int tiempo = Mathf.FloorToInt(Time.time);
 
-        while (tiempo > contador && contador <= 10)
+
+        if (contador % 40 == 0)
         {
-            GameObject clon = Instantiate(prefab);
-            contador += 1;
-            clon.transform.position += new Vector3(0, 0, 2);
+            clon = Instantiate(prefab);
+            clon.transform.position = cubo.transform.position + new Vector3(0.5f, 10, 0);
+            Destroy(clon, 2);
         }
-        
-        
+    
+        contador++;
     }
 }
+
