@@ -20,13 +20,13 @@ public class RainObjects : MonoBehaviour
     {
         //int tiempo = Mathf.FloorToInt(Time.time);
 
-
         if (contador % 40 == 0)
         {
             clon = Instantiate(prefab);
-            clon.transform.position = cubo.transform.position + new Vector3(0.5f, 10, 0);
+            clon.transform.position = cubo.transform.position + new Vector3(10, 15, 0);
             Destroy(clon, 2);
         }
 
+        contador++;
     }
 }
