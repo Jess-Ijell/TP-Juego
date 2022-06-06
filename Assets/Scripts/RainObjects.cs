@@ -10,6 +10,7 @@ public class RainObjects : MonoBehaviour
     int contador = 1;
     GameObject clon;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +44,7 @@ public class RainObjects : MonoBehaviour
 
             Destroy(clon, 2);
         }
-
-
+        
         contador++;
     }
 }
