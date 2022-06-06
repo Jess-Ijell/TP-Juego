@@ -9,12 +9,13 @@ public class RainObjects : MonoBehaviour
     public GameObject cubo;
     int contador = 1;
     GameObject clon;
+    public GameObject Panel;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,12 +35,12 @@ public class RainObjects : MonoBehaviour
             clon = Instantiate(prefabCilindro);
             if (cubo.transform.position.z > 0)
             {
-                clon.transform.position = cubo.transform.position + new Vector3(12, 15, -3);
+                clon.transform.position = cubo.transform.position + new Vector3(12, 15, -5);
             }
 
             if (cubo.transform.position.z < 0)
             {
-                clon.transform.position = cubo.transform.position + new Vector3(12, 15, 3);
+                clon.transform.position = cubo.transform.position + new Vector3(12, 15, 5);
             }
 
             Destroy(clon, 2);

@@ -8,63 +8,73 @@ public class CubeMovement : MonoBehaviour
     public float movementSpeed;
     public Text Puntos;
     int puntos = 0;
+    public GameObject Panel;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Panel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(movementSpeed, 0, 0);
-
-        if (transform.position.z >= 21.5)
+        if (transform.position.x < 196)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            transform.position += new Vector3(movementSpeed, 0, 0);
+
+            if (transform.position.z >= 21.5)
             {
-                transform.position += new Vector3(movementSpeed * 2, 0, 0);
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    transform.position += new Vector3(movementSpeed * 2, 0, 0);
+                }
+
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    transform.position += new Vector3(0, 0, -movementSpeed * 2);
+                }
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            else if (transform.position.z <= -21.5)
             {
-                transform.position += new Vector3(0, 0, -movementSpeed * 2);
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    transform.position += new Vector3(movementSpeed * 2, 0, 0);
+                }
+
+
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    transform.position += new Vector3(0, 0, movementSpeed);
+                }
+            }
+
+            else
+            {
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    transform.position += new Vector3(movementSpeed * 2, 0, 0);
+                }
+
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    transform.position += new Vector3(0, 0, -movementSpeed * 2);
+                }
+
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    transform.position += new Vector3(0, 0, movementSpeed);
+                }
             }
         }
+        
 
-        else if (transform.position.z <= -21.5)
+        if (transform.position.x >= 196)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.position += new Vector3(movementSpeed * 2, 0, 0);
-            }
+            Panel.SetActive(true);
 
-
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.position += new Vector3(0, 0, movementSpeed);
-            }
         }
-
-        else
-        {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.position += new Vector3(movementSpeed * 2, 0, 0);
-            }
-
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transform.position += new Vector3(0, 0, -movementSpeed * 2);
-            }
-
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.position += new Vector3(0, 0, movementSpeed);
-            }
-        }
-
 
             //void OnCollisionEnter(Collision col)
             //{
