@@ -9,13 +9,12 @@ public class RainObjects : MonoBehaviour
     public GameObject cubo;
     int contador = 1;
     GameObject clon;
-    public GameObject Panel;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Panel.SetActive(false);
+        
     }
 
     // Update is called once per frame
