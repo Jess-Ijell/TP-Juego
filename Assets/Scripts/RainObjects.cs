@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class RainObjects : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject prefabEsfera;
+    public GameObject prefabCilindro;
     public GameObject cubo;
-    int contador = 0;
+    int contador = 1;
     GameObject clon;
 
     // Start is called before the first frame update
@@ -20,12 +21,29 @@ public class RainObjects : MonoBehaviour
     {
         //int tiempo = Mathf.FloorToInt(Time.time);
 
-        if (contador % 40 == 0)
+        if (contador % 120 == 0)
         {
-            clon = Instantiate(prefab);
-            clon.transform.position = cubo.transform.position + new Vector3(10, 15, 0);
+            clon = Instantiate(prefabEsfera);
+            clon.transform.position = cubo.transform.position + new Vector3(12, 15, 0);
             Destroy(clon, 2);
         }
+        
+        if (contador % 185 == 0)
+        {
+            clon = Instantiate(prefabCilindro);
+            if (cubo.transform.position.z > 0)
+            {
+                clon.transform.position = cubo.transform.position + new Vector3(12, 15, -3);
+            }
+
+            if (cubo.transform.position.z < 0)
+            {
+                clon.transform.position = cubo.transform.position + new Vector3(12, 15, 3);
+            }
+
+            Destroy(clon, 2);
+        }
+
 
         contador++;
     }

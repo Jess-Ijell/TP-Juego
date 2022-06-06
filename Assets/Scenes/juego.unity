@@ -279,7 +279,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911764511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 3}
   m_Children: []
@@ -421,7 +421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642dd3c105009974395401e8c6122c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7986546097302569750, guid: 75250942893c50942b9158075e09c516, type: 3}
+  prefabEsfera: {fileID: 7986546097302569750, guid: 75250942893c50942b9158075e09c516,
+    type: 3}
+  prefabCilindro: {fileID: 2576892195726541998, guid: 2403842967a812641929a2b64d336b26,
+    type: 3}
   cubo: {fileID: 1500028405}
 --- !u!4 &1856015253
 Transform:
