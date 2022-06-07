@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CubeMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CubeMovement : MonoBehaviour
     public Text Puntos;
     int puntos = 0;
     public GameObject Panel;
+    public Text PuntosFinales;
 
     // Start is called before the first frame update
     void Start()
@@ -73,28 +75,33 @@ public class CubeMovement : MonoBehaviour
         if (transform.position.x >= 196)
         {
             Panel.SetActive(true);
+            PuntosFinales.text = "Suaste un totales de: "+puntos+" puntos.";
+        }
+    
+    }
+
+    public void ReiniciarJuego()
+    {
+        SceneManager.LoadScene("juego");
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Cylinder(Clone)")
+        {
+            puntos++;
+            Puntos.text = "Puntos: " + puntos;
 
         }
 
-            //void OnCollisionEnter(Collision col)
-            //{
-            //    if (col.gameObject.name == "Cylinder(Clone)")
-            //    {
-            //        puntos++;
-            //        Puntos.text = "Puntos: " + puntos;
-
-            //    }
-
-            //    if (col.gameObject.name == "Sphere(Clone)")
-            //    {
-            //        //perdió
-            //    }
-            //}
-
-            //void OnCollisionExit()
-            //{
-            //    transform.position = posicion;
-            //}
-
+        if (col.gameObject.name == "Sphere(Clone)")
+        {
+            //perdió
         }
+    }
+
+    void OnCollisionExit()
+    {
+            
+    }
 }
