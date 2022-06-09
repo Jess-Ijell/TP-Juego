@@ -790,10 +790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ea0dce79f434545ac2baa63ac972df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.1
+  movementSpeed: 0.2
   Puntos: {fileID: 610124962}
   Panel: {fileID: 539165352}
   PuntosFinales: {fileID: 905435440}
+  GanastePerdiste: {fileID: 1845125484}
 --- !u!65 &1500028407
 BoxCollider:
   m_ObjectHideFlags: 0
