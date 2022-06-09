@@ -22,7 +22,7 @@ public class CubeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < 196)
+        if (transform.position.x < 196 && Panel.activeInHierarchy == false)
         {
             transform.position += new Vector3(movementSpeed, 0, 0);
                     
