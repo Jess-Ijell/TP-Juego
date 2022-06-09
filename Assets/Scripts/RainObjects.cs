@@ -11,24 +11,29 @@ public class RainObjects : MonoBehaviour
     public int a;
     GameObject clon;
     int contador = 1;
+    //public AudioClip AudioEsfera;
+    //AudioSource fuenteAudio;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //fuenteAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (panel.activeInHierarchy == false)
+        if (panel.activeInHierarchy == false && cubo.transform.position.x <= 160)
         {
             if (contador % 70 == 0)
             {
                 clon = Instantiate(prefabEsfera);
                 clon.transform.position = cubo.transform.position + new Vector3(15, 15, 0);
                 Destroy(clon, 2);
+
+                //fuenteAudio.clip = AudioEsfera;
+                //fuenteAudio.Play();
             }
 
             if (contador % 185 == 0)

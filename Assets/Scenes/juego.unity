@@ -979,6 +979,9 @@ MonoBehaviour:
   prefabCilindro: {fileID: 2576892195726541998, guid: 2403842967a812641929a2b64d336b26,
     type: 3}
   cubo: {fileID: 1500028405}
+  panel: {fileID: 539165352}
+  a: 0
+  AudioEsfera: {fileID: 8300000, guid: eab01d0d5d7f3264caa9eb8562cf3c49, type: 3}
 --- !u!4 &1856015253
 Transform:
   m_ObjectHideFlags: 0
