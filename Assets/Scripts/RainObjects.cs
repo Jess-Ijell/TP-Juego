@@ -22,29 +22,47 @@ public class RainObjects : MonoBehaviour
     {
         //int tiempo = Mathf.FloorToInt(Time.time);
 
-        if (contador % 120 == 0)
+        if (contador % 70 == 0)
         {
             clon = Instantiate(prefabEsfera);
-            clon.transform.position = cubo.transform.position + new Vector3(12, 15, 0);
+            clon.transform.position = cubo.transform.position + new Vector3(15, 15, 0);
             Destroy(clon, 2);
         }
-        
+
         if (contador % 185 == 0)
         {
             clon = Instantiate(prefabCilindro);
             if (cubo.transform.position.z > 0)
             {
-                clon.transform.position = cubo.transform.position + new Vector3(12, 15, -5);
+                clon.transform.position = cubo.transform.position + new Vector3(15, 15, -7);
             }
 
             if (cubo.transform.position.z < 0)
             {
-                clon.transform.position = cubo.transform.position + new Vector3(12, 15, 5);
+                clon.transform.position = cubo.transform.position + new Vector3(15, 15, 7);
             }
 
             Destroy(clon, 2);
         }
-        
+
+        if (contador % 160 == 0)
+        {
+            clon = Instantiate(prefabCilindro);
+            if (cubo.transform.position.z > 0)
+            {
+                clon.transform.position = cubo.transform.position + new Vector3(14, 15, -12);
+            }
+
+            if (cubo.transform.position.z < 0)
+            {
+                clon.transform.position = cubo.transform.position + new Vector3(14, 15, 12);
+            }
+
+            Destroy(clon, 2);
+        }
+
+
+
         contador++;
     }
 }
