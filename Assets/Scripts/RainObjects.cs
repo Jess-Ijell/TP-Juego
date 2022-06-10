@@ -11,14 +11,14 @@ public class RainObjects : MonoBehaviour
     public int a;
     GameObject clon;
     int contador = 1;
-    //public AudioClip AudioEsfera;
-    //AudioSource fuenteAudio;
+    public AudioClip AudioEsfera;
+    AudioSource fuenteAudio;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //fuenteAudio = GetComponent<AudioSource>();
+        fuenteAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +34,10 @@ public class RainObjects : MonoBehaviour
 
                 //fuenteAudio.clip = AudioEsfera;
                 //fuenteAudio.Play();
+                if(!fuenteAudio.isPlaying)
+                {
+                    fuenteAudio.PlayOneShot(AudioEsfera);
+                }
             }
 
             if (contador % 185 == 0)

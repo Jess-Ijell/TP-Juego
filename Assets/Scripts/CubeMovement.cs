@@ -67,7 +67,7 @@ public class CubeMovement : MonoBehaviour
         {
             Panel.SetActive(true);
             GanastePerdiste.text = "¡Ganasete!";
-            PuntosFinales.text = "Suaste un totales de: "+puntos+" puntos.";
+            PuntosFinales.text = "Sumaste un total de: "+puntos+" puntos.";
         }
     
     }
@@ -90,7 +90,7 @@ public class CubeMovement : MonoBehaviour
         {
             Panel.SetActive(true);
             GanastePerdiste.text = "¡Perdiste!";
-            PuntosFinales.text = "Has perdido todos tus puntos, vuelve a jugar para conseguirlos neuvamente.";
+            PuntosFinales.text = "Has perdido todos tus puntos.";
         }
     }
 
