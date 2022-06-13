@@ -15,6 +15,8 @@ public class CubeMovement : MonoBehaviour
     public AudioClip SonidoGano;
     AudioSource fuenteAudio;
     int repSonido = 1;
+    public GameObject confetti;
+    int cantConfetti = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +93,18 @@ public class CubeMovement : MonoBehaviour
     {
         if (col.gameObject.name == "Cylinder(Clone)")
         {
+            Vector3 posColision = col.gameObject.transform.position;
+            Destroy(col.gameObject, 0.2f);
+            int i;
+            GameObject clon;
+
+            for (i = 1; i <= cantConfetti; i++)
+            {
+                clon = Instantiate(confetti);
+                clon.transform.position  = posColision;
+                Destroy(clon, 1);
+            }
+
             puntos++;
             Puntos.text = "Puntos: " + puntos;
 

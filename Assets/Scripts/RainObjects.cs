@@ -69,9 +69,7 @@ public class RainObjects : MonoBehaviour
 
                 Destroy(clon, 2);
             }
-
-
-
+                    
             contador++;
         }        
     }

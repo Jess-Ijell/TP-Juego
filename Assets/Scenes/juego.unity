@@ -797,6 +797,8 @@ MonoBehaviour:
   PuntosFinales: {fileID: 905435440}
   GanastePerdiste: {fileID: 1845125484}
   SonidoGano: {fileID: 8300000, guid: fba85c6fcc1f34842ae5a85afa8b816d, type: 3}
+  confetti: {fileID: 7572610375878199088, guid: 4ea493be83797d24e88fa317649a8ef7,
+    type: 3}
 --- !u!65 &1500028407
 BoxCollider:
   m_ObjectHideFlags: 0
