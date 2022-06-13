@@ -12,11 +12,15 @@ public class CubeMovement : MonoBehaviour
     public GameObject Panel;
     public Text PuntosFinales;
     public Text GanastePerdiste;
+    public AudioClip SonidoGano;
+    AudioSource fuenteAudio;
+    int repSonido = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         Panel.SetActive(false);
+        fuenteAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +72,12 @@ public class CubeMovement : MonoBehaviour
             Panel.SetActive(true);
             GanastePerdiste.text = "¡Ganasete!";
             PuntosFinales.text = "Sumaste un total de: "+puntos+" puntos.";
+        }
+
+        if (GanastePerdiste.text == "¡Ganasete!" && repSonido == 1)
+        {
+            fuenteAudio.PlayOneShot(SonidoGano);
+            repSonido++;
         }
     
     }
