@@ -32,9 +32,7 @@ public class RainObjects : MonoBehaviour
                 clon.transform.position = cubo.transform.position + new Vector3(15, 15, 0);
                 Destroy(clon, 2);
 
-                //fuenteAudio.clip = AudioEsfera;
-                //fuenteAudio.Play();
-                if(!fuenteAudio.isPlaying)
+                if (!fuenteAudio.isPlaying)
                 {
                     fuenteAudio.PlayOneShot(AudioEsfera);
                 }
