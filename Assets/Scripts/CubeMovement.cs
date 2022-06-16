@@ -17,6 +17,7 @@ public class CubeMovement : MonoBehaviour
     int repSonido = 1;
     public GameObject confetti;
     int cantConfetti = 30;
+    public Text tiempo;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,11 @@ public class CubeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.x < 196 && Panel.activeInHierarchy == false)
         {
+            tiempo.text = "Tiempo: "+Mathf.FloorToInt(Time.timeSinceLevelLoad).ToString();
+
             transform.position += new Vector3(movementSpeed, 0, 0);
                     
             if (Input.GetKey(KeyCode.UpArrow))
@@ -80,6 +84,7 @@ public class CubeMovement : MonoBehaviour
         {
             fuenteAudio.PlayOneShot(SonidoGano);
             repSonido++;
+            tiempo.text = "Tiempo: 0";
         }
     
     }
@@ -115,6 +120,7 @@ public class CubeMovement : MonoBehaviour
             Panel.SetActive(true);
             GanastePerdiste.text = "¡Perdiste!";
             PuntosFinales.text = "Has perdido todos tus puntos.";
+            tiempo.text = "Tiempo: 0";
         }
     }
 
