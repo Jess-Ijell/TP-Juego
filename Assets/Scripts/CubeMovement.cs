@@ -96,7 +96,7 @@ public class CubeMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Cylinder(Clone)")
+        if (col.gameObject.name == "prefmanzana(Clone)")
         {
             Vector3 posColision = col.gameObject.transform.position;
             Destroy(col.gameObject, 0.2f);
@@ -115,7 +115,7 @@ public class CubeMovement : MonoBehaviour
 
         }
 
-        if (col.gameObject.name == "Sphere(Clone)")
+        if (col.gameObject.name == "prefbomba(Clone)")
         {
             Panel.SetActive(true);
             GanastePerdiste.text = "¡Perdiste!";
