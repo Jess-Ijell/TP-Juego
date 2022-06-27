@@ -76,11 +76,11 @@ public class CubeMovement : MonoBehaviour
         if (transform.position.x >= 196)
         {
             Panel.SetActive(true);
-            GanastePerdiste.text = "¡Ganasete!";
+            GanastePerdiste.text = "¡Ganaste!";
             PuntosFinales.text = "Sumaste un total de: "+puntos+" puntos.";
         }
 
-        if (GanastePerdiste.text == "¡Ganasete!" && repSonido == 1)
+        if (GanastePerdiste.text == "¡Ganaste!" && repSonido == 1)
         {
             fuenteAudio.PlayOneShot(SonidoGano);
             repSonido++;
