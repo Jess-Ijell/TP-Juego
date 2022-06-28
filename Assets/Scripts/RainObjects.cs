@@ -29,8 +29,8 @@ public class RainObjects : MonoBehaviour
             if (contador % 70 == 0)
             {
                 clon = Instantiate(prefabEsfera);
-                clon.transform.position = cubo.transform.position + new Vector3(22, 25, 0);
-                Destroy(clon, 2.5f);
+                clon.transform.position = cubo.transform.position + new Vector3(25, 25, 0);
+                Destroy(clon, 2.3f);
 
                 if (!fuenteAudio.isPlaying)
                 {
@@ -43,15 +43,15 @@ public class RainObjects : MonoBehaviour
                 clon = Instantiate(prefabCilindro);
                 if (cubo.transform.position.z > 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, -7);
+                    clon.transform.position = cubo.transform.position + new Vector3(22, 25, -7);
                 }
 
                 if (cubo.transform.position.z < 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, 7);
+                    clon.transform.position = cubo.transform.position + new Vector3(25, 25, 7);
                 }
 
-                Destroy(clon, 2.5f);
+                Destroy(clon, 2.3f);
             }
 
             if (contador % 160 == 0)
@@ -59,15 +59,15 @@ public class RainObjects : MonoBehaviour
                 clon = Instantiate(prefabCilindro);
                 if (cubo.transform.position.z > 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, -12);
+                    clon.transform.position = cubo.transform.position + new Vector3(22, 25, -12);
                 }
 
                 if (cubo.transform.position.z < 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, 12);
+                    clon.transform.position = cubo.transform.position + new Vector3(22, 25, 12);
                 }
 
-                Destroy(clon, 2.5f);
+                Destroy(clon, 2.3f);
             }
                     
             contador++;
