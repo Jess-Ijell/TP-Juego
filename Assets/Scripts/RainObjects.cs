@@ -29,8 +29,8 @@ public class RainObjects : MonoBehaviour
             if (contador % 70 == 0)
             {
                 clon = Instantiate(prefabEsfera);
-                clon.transform.position = cubo.transform.position + new Vector3(15, 15, 0);
-                Destroy(clon, 2);
+                clon.transform.position = cubo.transform.position + new Vector3(22, 25, 0);
+                Destroy(clon, 2.5f);
 
                 if (!fuenteAudio.isPlaying)
                 {
@@ -43,15 +43,15 @@ public class RainObjects : MonoBehaviour
                 clon = Instantiate(prefabCilindro);
                 if (cubo.transform.position.z > 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(15, 15, -7);
+                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, -7);
                 }
 
                 if (cubo.transform.position.z < 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(15, 15, 7);
+                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, 7);
                 }
 
-                Destroy(clon, 2);
+                Destroy(clon, 2.5f);
             }
 
             if (contador % 160 == 0)
@@ -59,15 +59,15 @@ public class RainObjects : MonoBehaviour
                 clon = Instantiate(prefabCilindro);
                 if (cubo.transform.position.z > 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(14, 15, -12);
+                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, -12);
                 }
 
                 if (cubo.transform.position.z < 0)
                 {
-                    clon.transform.position = cubo.transform.position + new Vector3(14, 15, 12);
+                    clon.transform.position = cubo.transform.position + new Vector3(20, 25, 12);
                 }
 
-                Destroy(clon, 2);
+                Destroy(clon, 2.5f);
             }
                     
             contador++;
